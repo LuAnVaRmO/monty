@@ -16,7 +16,7 @@ void _push_f(stack_t **head, unsigned int line_number)
 		free(new);
 		pr_er_malloc();
 	}
-	if (_isdigit(info.number) == 1)
+	if (info.number != NULL && is_a_digit(info.number) == 1)
 	{
 		new->n = atoi(info.number);
 		new->prev = NULL;
@@ -33,4 +33,21 @@ void _push_f(stack_t **head, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
+}
+/**
+ * is_a_digit - verify if is a number
+ * Return: void
+ */
+int is_a_digit(char *c)
+{
+	unsigned int i = 0;
+
+	for (i = 0; c[i] != '\0'; i++)
+	{
+		if (c[i] < '0' || c[i] > '9')
+			return (0);
+		else
+			return (1);
+	}
+	return (0);
 }

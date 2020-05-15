@@ -29,29 +29,12 @@ void open_file(char *filename)
 	{
 		line_number++;
 		tokenize();
-		if (info.token != NULL)
+		if (info.token != NULL && info.token[0] != '#')
 		{
 			get_op_f(info.token, &head, line_number);
 		}
+		free(info.buff);
 	}
 	fclose(info.fname);
 	free_all(head);
-}
-/**
- * _isdigit - Entry point
- * @c: Integer Number to evaluate if digit or not
- * Return: 1 if digit, 0 if otherway
- */
-int _isdigit(char *c)
-{
-	unsigned int i = 0;
-
-	for (i = 0; c[i] != '\0'; i++)
-	{
-		if (c[i] < '0' || c[i] > '9')
-			return (0);
-		else
-			return (1);
-	}
-	return (0);
 }

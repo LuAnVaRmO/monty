@@ -8,6 +8,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <string.h>
+ #include <ctype.h>
 
 #define BUFSIZE = 1024
 #define DELIMITERS " \t\r\n"
@@ -61,7 +62,7 @@ extern globvar info;
 void open_file(char *filename);
 void pr_er_open(char *name);
 void pr_er_malloc();
-int _isdigit(char *c);
+int is_a_digit(char *n);
 void free_all(stack_t *head);
 void tokenize(void);
 void get_op_f(char *tok, stack_t **h, int line_number);

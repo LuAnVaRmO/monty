@@ -16,6 +16,7 @@ void get_op_f(char *tok, stack_t **h, int line_number)
 		{"pop", _pop_f},
 		{"swap", _swap_f},
 		{"nop", _nop_f},
+		{"add", _add_f},
 		{NULL, NULL}
 	};
 	while (ops[i].opcode != NULL)

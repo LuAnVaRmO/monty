@@ -73,5 +73,6 @@ void _pint_f(stack_t **head, unsigned int line_number);
 void _pop_f(stack_t **head, unsigned int line_number);
 void _swap_f(stack_t **head, unsigned int line_number);
 void _nop_f(stack_t **head, unsigned int line_number);
+void _add_f(stack_t **head, unsigned int line_number);
 
 #endif

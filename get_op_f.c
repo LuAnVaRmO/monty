@@ -12,6 +12,7 @@ void get_op_f(char *tok, stack_t **h, int line_number)
 	instruction_t ops[] = {
 		{"push", _push_f},
 		{"pall", _pall_f},
+		{"pint", _pint_f},
 		{NULL, NULL}
 	};
 	while (ops[i].opcode != NULL)

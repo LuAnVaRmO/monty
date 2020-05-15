@@ -70,5 +70,6 @@ void get_op_f(char *tok, stack_t **h, int line_number);
 void _push_f(stack_t **head, unsigned int line_number);
 void _pall_f(stack_t **head, unsigned int line_number);
 void _pint_f(stack_t **head, unsigned int line_number);
+void _pop_f(stack_t **head, unsigned int line_number);
 
 #endif

@@ -13,7 +13,9 @@ void free_all(stack_t *head)
 		next = head->next;
 		free(head);
 		head = next;
+	}	
+	if ((info.buff != NULL))
+	{
+		free(info.buff);
 	}
-	fclose(info.fname);
-	free(info.buff);
 }

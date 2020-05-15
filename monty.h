@@ -10,7 +10,8 @@
 #include <string.h>
 #include <ctype.h>
 
-#define DELIMITERS " \t\r\n"
+
+#define DELIMITERS " \t\n"
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -60,7 +61,6 @@ typedef struct glvar
 
 extern globvar info;
 
-void open_file(char *filename);
 void pr_er_open(char *name);
 void pr_er_malloc(void);
 int is_a_digit(char *n);

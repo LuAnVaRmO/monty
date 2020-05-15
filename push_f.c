@@ -36,6 +36,7 @@ void _push_f(stack_t **head, unsigned int line_number)
 }
 /**
  * is_a_digit - verify if is a number
+ * @c: char to verify
  * Return: void
  */
 int is_a_digit(char *c)

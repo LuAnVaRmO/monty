@@ -8,9 +8,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <string.h>
- #include <ctype.h>
+#include <ctype.h>
 
-#define BUFSIZE = 1024
 #define DELIMITERS " \t\r\n"
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -23,9 +22,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -38,30 +37,32 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /**
  * struct glvar - some useful things.
- * @name_file: name of the file
+ * @fname: name of the file
  * @number: value to assign
  * @buff: the line variable
+ * @token: value tokenized
+ * @namestr: string with the name
  * Description: global variables
  */
 typedef struct glvar
 {
-        FILE *fname;
-        char *namestr;
-        char *number;
-        char *token;
-        char *buff;
-}globvar;
+	FILE *fname;
+	char *namestr;
+	char *number;
+	char *token;
+	char *buff;
+} globvar;
 
 extern globvar info;
 
 void open_file(char *filename);
 void pr_er_open(char *name);
-void pr_er_malloc();
+void pr_er_malloc(void);
 int is_a_digit(char *n);
 void free_all(stack_t *head);
 void tokenize(void);
